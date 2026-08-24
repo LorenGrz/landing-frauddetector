@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Icon from '../components/Icon';
 
+const basePath = process.env.GITHUB_ACTIONS ? '/landing-frauddetector' : '';
+
 const FEATURES = [
   {
     icon: 'science',
@@ -94,7 +96,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="overflow-hidden rounded-2xl border border-outline-variant bg-surface shadow-lg">
             <Image
-              src="/dashboard.png"
+              src={`${basePath}/dashboard.png`}
               alt="Dashboard de Fraud Detector mostrando KPIs en vivo y gráficos de distribución de montos"
               width={1440}
               height={900}
